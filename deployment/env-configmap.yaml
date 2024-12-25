@@ -1,0 +1,12 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: env-configmap
+data:
+  # Configuration values can be set as key-value properties
+  POSTGRES_HOST: cdr.cnxpo2fpthz4.us-east-1.rds.amazonaws.com 
+  POSTGRES_DB: postgres
+  AWS_BUCKET: ninh-cloud-dev-project-3-bucket 
+  AWS_REGION: us-east-1
+  AWS_PROFILE: default
+  JWT_SECRET: testing
