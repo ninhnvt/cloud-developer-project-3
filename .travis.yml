@@ -24,3 +24,4 @@ script:
   - docker push ninhnvt/udagram-api-user:v2
   - docker push ninhnvt/udagram-frontend:v4
   - docker push ninhnvt/reverseproxy:v2
+  
