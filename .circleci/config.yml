@@ -12,7 +12,6 @@ jobs:
     steps:
       - checkout  # Checks out the code from the repository
       - setup_remote_docker:
-          version: 20.10.7
           docker_layer_caching: true  # Enables Docker layer caching for faster builds
       - run:
           name: Docker Login
@@ -34,4 +33,18 @@ jobs:
       - run:
           name: Push Docker Images
           command: |
-            
+            docker push ninhnvt/udagram-api-feed:v2
+            docker push ninhnvt/udagram-api-user:v2
+            docker push ninhnvt/udagram-frontend:v4
+            docker push ninhnvt/reverseproxy:v2
+
+workflows:
+  version: 2
+  build_and_push:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - main
+                - develop
